@@ -9,7 +9,7 @@ const products = [
         stock: 10,
         brand: "Nike",
         sizes: [ 5, 6, 7, 8, 9, 10 ],
-        image: '/assets/image/product1.jpg'
+        image: '/assets/image/products/product1.jpg'
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const products = [
         stock: 10,
         brand: "Adidas",
         sizes: [ 5, 6, 7, 8, 9, 10 ],
-        image: '/assets/image/product2.jpg'
+        image: '/assets/image/products/product2.jpg'
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ const products = [
         stock: 10,
         brand: "Converse",
         sizes: [ 3, 5, 10, 12, 14, 15 ],
-        image: '/assets/image/product3.jpg'
+        image: '/assets/image/products/product3.jpg'
     },
     {
         id: 4,
@@ -45,7 +45,7 @@ const products = [
         stock: 4,
         brand: "Vans",
         sizes: [ 3.2, 3.3, 3.4, 4, 5, 6 ],
-        image: '/assets/image/product4.jpg'
+        image: '/assets/image/products/product4.jpg'
     },
     {
         id: 5,
@@ -57,7 +57,7 @@ const products = [
         stock: 14,
         brand: "Reebok",
         sizes: [ 5, 6, 7, 9, 10, 12 ],
-        image: '/assets/image/product5.jpg'
+        image: '/assets/image/products/product5.jpg'
     },
     {
         id: 6,
@@ -69,7 +69,7 @@ const products = [
         stock: 11,
         brand: "Nike",
         sizes: [ 5, 6, 7, 9, 10, 12 ],
-        image: '/assets/image/product6.jpg'
+        image: '/assets/image/products/product6.jpg'
     },
     {
         id: 7,
@@ -81,7 +81,7 @@ const products = [
         stock: 3,
         brand: "Adidas",
         sizes: [ 5, 6, 7, 9, 10, 12 ],
-        image: '/assets/image/product7.jpg'
+        image: '/assets/image/products/product7.jpg'
     },
     {
         id: 8,
@@ -93,7 +93,7 @@ const products = [
         stock: 3,
         brand: "Puma",
         sizes: [ 5, 6, 7, 9, 10, 12 ],
-        image: '/assets/image/product8.jpg'
+        image: '/assets/image/products/product8.jpg'
     },
     {
         id: 9,
@@ -105,7 +105,7 @@ const products = [
         stock: 3,
         brand: "Reebok",
         sizes: [ 5, 6, 7, 9, 10, 12 ],
-        image: '/assets/image/product9.jpg'
+        image: '/assets/image/products/product9.jpg'
     },
     {
         id: 10,
@@ -117,7 +117,7 @@ const products = [
         stock: 10,
         brand: "New Balance",
         sizes: [ 5, 6, 7, 9, 10, 12 ],
-        image: '/assets/image/product10.jpg'
+        image: '/assets/image/products/product10.jpg'
     },
     {
         id: 11,
@@ -129,7 +129,7 @@ const products = [
         stock: 15,
         brand: "Nike",
         sizes: [ 7, 8, 9, 10, 11, 12 ],
-        image: '/assets/image/product11.jpg'
+        image: '/assets/image/products/product11.jpg'
     },
     {
         id: 12,
@@ -141,7 +141,7 @@ const products = [
         stock: 10,
         brand: "Adidas",
         sizes: [ 7, 8, 9, 10, 11, 12 ],
-        image: '/assets/image/product12.jpg'
+        image: '/assets/image/products/product12.jpg'
     },
     {
         id: 13,
@@ -153,7 +153,7 @@ const products = [
         stock: 15,
         brand: "Nike",
         sizes: [ 7, 8, 9, 10, 11, 12 ],
-        image: '/assets/image/product13.jpg'
+        image: '/assets/image/products/product13.jpg'
     },
     {
         id: 14,
@@ -165,7 +165,7 @@ const products = [
         stock: 20,
         brand: "Vans",
         sizes: [ 9, 10, 11, 12, 13, 14 ],
-        image: '/assets/image/product14.jpg'
+        image: '/assets/image/products/product14.jpg'
     },
     {
         id: 15,
@@ -177,7 +177,7 @@ const products = [
         stock: 20,
         brand: "Vans",
         sizes: [ 9, 10, 11, 12, 13, 14 ],
-        image: '/assets/image/product15.jpg'
+        image: '/assets/image/products/product15.jpg'
     },
 ]
 module.exports = {
