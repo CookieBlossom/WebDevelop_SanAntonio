@@ -1,0 +1,36 @@
+.navbar-brand img{
+    border-radius: 20%;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-nav{
+    display: flex;
+    align-items: center;
+}
+
+.navbar > .container-fluid{
+    justify-content: center;
+}
+
+#social img{
+    padding: 0;
+    width: 30px;
+    margin: 5px;
+}
+#social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: space-between;
+    }  
+}
