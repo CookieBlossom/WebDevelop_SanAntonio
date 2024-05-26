@@ -2,7 +2,6 @@ import { getProducts } from './api.js';
 
 const showUnique = ( results = [], property ) => {
     const categoryUnique = new Set();
-
     results.flatMap(result => result[property])
         .forEach( category => categoryUnique.add(category));
 
