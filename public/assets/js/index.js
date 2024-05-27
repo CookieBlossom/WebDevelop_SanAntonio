@@ -1,18 +1,11 @@
 import { getProducts } from './api.js';
+import { showUnique } from './funciones.js';
 
-const showUnique = ( results = [], property ) => {
-    const categoryUnique = new Set();
-    results.flatMap(result => result[property])
-        .forEach( category => categoryUnique.add(category));
-
-    return Array.from(categoryUnique);
-}
 
 const createCategories = (results) => {
-    let location = document.getElementById("showCategories");
+    const location = document.getElementById("showCategories");
     const data = showUnique(results, "category");
     for( const element of data){
-        console.log(element);
 
         const divCol = document.createElement("div");
         divCol.classList.add("row"); 
@@ -31,7 +24,7 @@ const createCategories = (results) => {
 }
 
 const createBrands = (results) => {
-    let location = document.getElementById("showBrands");
+    const location = document.getElementById("showBrands");
     const data = showUnique(results, "brand");
     for ( const element of data ){
         const text =  element.split(" ").join("");
@@ -64,7 +57,7 @@ const createBrands = (results) => {
 }
 
 const createGenre = (results) => {
-    let location = document.getElementById("showGenre");
+    const location = document.getElementById("showGenre");
     const data = showUnique(results, "genre");
     for( const element of data ){
         const row = document.createElement("div");
@@ -81,7 +74,6 @@ const createGenre = (results) => {
 
 getProducts()
     .then((products)=> {
-        console.log(products);
         createCategories(products);
         createBrands(products);
         createGenre(products);
