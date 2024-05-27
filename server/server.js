@@ -16,7 +16,7 @@ app.get('/products', function(req, res){
         statusCode: 400,
         objectProduct 
     })
-})
+})|
 
 app.get('/products/:id', function(req, res) {
     const productId = req.params.id;
@@ -50,5 +50,5 @@ app.get('/usuarios/:id', function(req, res) {
 
 app.listen(port, () => {
     console.log(`Se esta ejecutando en el puerto:${port}`);
-    console.log(users.usuarios);
+    
 });
