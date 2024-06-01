@@ -2,7 +2,7 @@ let API_BASE_URL = "http://localhost:8080"; // URL de la API para entorno de des
 
 if (window.location.hostname === "webdevelop-sanantonio-cbux.onrender.com") {
     // URL de la API para entorno de producción (Render)
-    API_BASE_URL = "https://webdevelop-sanantonio-cbux.onrender.com/";
+    API_BASE_URL = "https://webdevelop-sanantonio-cbux.onrender.com";
 }
 
 export const getProducts = async() => {
