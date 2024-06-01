@@ -1,7 +1,7 @@
 export const getProducts = async() => {
     try{
 
-        const response = await fetch("http://localhost:8080/products");
+        const response = await fetch("https://webdevelop-sanantonio-cbux.onrender.com/products");
 
         const data = await response.json();
 
@@ -15,7 +15,7 @@ export const getProducts = async() => {
 export const getProductsDetail = async( id ) => {
     try{
 
-        const response = await fetch(`http://localhost:8080/products/${id}`);
+        const response = await fetch(`https://webdevelop-sanantonio-cbux.onrender.com/products/${id}`);
         const data = await response.json();
 
         return data;
