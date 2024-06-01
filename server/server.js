@@ -2,20 +2,16 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const cors= require("cors");
-const dotenv = require('dotenv');
-
 const port = process.env.PORT || 8080;
 const objectProduct = require("./products");
 const users = require("./usuarios");
-
-dotenv.config();
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 
 app.get('/', (req, res) => {
-     res.sendFile(path.join(__dirname, '..', 'public', 'paginaPrincipal.html'));
+     res.sendFile(path.join(__dirname, '..', 'public', 'login.html'));
 });
 
 
