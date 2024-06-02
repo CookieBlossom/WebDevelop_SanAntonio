@@ -179,6 +179,126 @@ const products = [
         sizes: [ 9, 10, 11, 12, 13, 14 ],
         image: '/assets/image/products/product15.jpg'
     },
+    {
+        id: 16,
+        name: "Nike React Element 87",
+        category: ["Running", "LifeStyle"],
+        genre: "Unisex",
+        description: "Las Nike React Element 87 son unas zapatillas que combinan estilo y rendimiento. Con su amortiguación React y su diseño moderno, son ideales para correr o para un uso casual.",
+        price: 270000,
+        stock: 8,
+        brand: "Nike",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product16.jpg'
+    },
+    {
+        id: 17,
+        name: "Adidas NMD R1",
+        category: ["Running", "LifeStyle"],
+        genre: "Unisex",
+        description: "Las Adidas NMD R1 son conocidas por su comodidad y estilo vanguardista. Con su parte superior de tejido elástico y su amortiguación Boost, son ideales para el día a día.",
+        price: 240000,
+        stock: 6,
+        brand: "Adidas",
+        sizes: [ 7, 8, 9, 10, 11 ],
+        image: '/assets/image/products/product17.jpg'
+    },
+    {
+        id: 18,
+        name: "Converse Chuck 70",
+        category: ["LifeStyle"],
+        genre: "Unisex",
+        description: "Las Converse Chuck 70 son una versión actualizada de las clásicas Chuck Taylor All Star. Con su construcción de lona resistente y suela de goma, ofrecen durabilidad y estilo.",
+        price: 210000,
+        stock: 10,
+        brand: "Converse",
+        sizes: [ 5, 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product18.jpg'
+    },
+    {
+        id: 19,
+        name: "Vans Authentic",
+        category: ["SkateBoarding", "LifeStyle"],
+        genre: "Unisex",
+        description: "Las Vans Authentic son unas zapatillas clásicas y versátiles que se adaptan a cualquier ocasión. Con su suela de waffle y su parte superior de lona, ofrecen un excelente agarre y estilo.",
+        price: 180000,
+        stock: 12,
+        brand: "Vans",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product19.jpg'
+    },
+    {
+        id: 20,
+        name: "Reebok Club C 85",
+        category: ["LifeStyle"],
+        genre: "Unisex",
+        description: "Las Reebok Club C 85 son unas zapatillas clásicas con un toque retro. Con su parte superior de cuero suave y su suela de goma resistente, son ideales para un look casual y cómodo.",
+        price: 170000,
+        stock: 9,
+        brand: "Reebok",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product20.jpg'
+    },
+    {
+        id: 21,
+        name: "New Balance 997H",
+        category: ["LifeStyle"],
+        genre: "Unisex",
+        description: "Las New Balance 997H son unas zapatillas inspiradas en el estilo de los años 90. Con su amortiguación cómoda y su diseño retro, son perfectas para el uso diario.",
+        price: 220000,
+        stock: 7,
+        brand: "New Balance",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product21.jpg'
+    },
+    {
+        id: 22,
+        name: "Nike SB Dunk Low",
+        category: ["SkateBoarding", "LifeStyle"],
+        genre: "Unisex",
+        description: "Las Nike SB Dunk Low son unas zapatillas diseñadas para el skate, pero también son muy populares en la moda urbana. Con su suela gruesa y amortiguación Zoom Air, ofrecen rendimiento y estilo.",
+        price: 230000,
+        stock: 8,
+        brand: "Nike",
+        sizes: [ 7, 8, 9, 10, 11 ],
+        image: '/assets/image/products/product22.jpg'
+    },
+    {
+        id: 23,
+        name: "Adidas Gazelle",
+        category: ["LifeStyle"],
+        genre: "Unisex",
+        description: "Las Adidas Gazelle son unas zapatillas clásicas con un toque vintage. Con su parte superior de ante y su suela de goma texturizada, son ideales para un look retro y casual.",
+        price: 190000,
+        stock: 10,
+        brand: "Adidas",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product23.jpg'
+    },
+    {
+        id: 24,
+        name: "Puma Suede Classic",
+        category: ["LifeStyle"],
+        genre: "Unisex",
+        description: "Las Puma Suede Classic son unas zapatillas icónicas que han estado en la escena de la moda desde los años 80. Con su parte superior de ante y su suela de goma, ofrecen estilo y comodidad.",
+        price: 200000,
+        stock: 11,
+        brand: "Puma",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product24.jpg'
+    },
+    {
+        id: 25,
+        name: "Reebok Nano X",
+        category: ["Training"],
+        genre: "Unisex",
+        description: "Las Reebok Nano X son unas zapatillas diseñadas para entrenamiento de alta intensidad. Con su suela estable y su parte superior transpirable, ofrecen soporte y rendimiento en cada sesión de entrenamiento.",
+        price: 270000,
+        stock: 6,
+        brand: "Reebok",
+        sizes: [ 6, 7, 8, 9, 10 ],
+        image: '/assets/image/products/product25.jpg'
+    }    
 ]
 module.exports = {
     products
