@@ -59,9 +59,19 @@
 #loadMoreBtn {
     font-weight: bold;
 }
+#container-filters {
+    display: flex;
+    justify-content: space-around;
+}
+
 #productsFilter {
     display: flex;
     justify-content: center;
+}
+
+#productsFilter .dropdown{
+
+    padding-left: 10px;
 }
 
 .row{

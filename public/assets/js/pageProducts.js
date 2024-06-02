@@ -6,6 +6,15 @@ let startIndex = 0;
 let allProductsRendered = false;
 let filters = { brand: ["Nike"]};
 
+(function () {
+    'use strict'
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  })()
+
+
 
 const itemPage = 5;
 const locationProducts = document.getElementById("loadProducts");
@@ -31,6 +40,7 @@ const createDropDown = (results = [], name) => {
     const button = document.createElement("button");
     button.classList.add("btn");
     button.classList.add("btn-secondary");
+    button.classList.add("btn-dark")
     button.classList.add("dropdown-toggle");
     button.id = `dropdown${name}`;
     button.type = 'button';
