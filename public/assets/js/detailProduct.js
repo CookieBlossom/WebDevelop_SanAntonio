@@ -1,5 +1,6 @@
 import { getProductsDetail, getProducts } from './api.js';
 import { filterProducts , selectDropdown } from './funciones.js';
+import { addToCart } from './cart.js';
 
 const locationInfoProduct = document.getElementById("infoProduct");
 const id = parseInt(search_info());
@@ -63,9 +64,17 @@ const addDropdowns = (sizes, stock) => {
     selectDropdown(stockArray, "stock", locationSelecterInfo);
 }
 
-const addToShoppingCart = () => {
-
-}
+const addToCartButton = document.createElement('button');
+addToCartButton.textContent = 'Agregar al carrito';
+addToCartButton.addEventListener('click', () => {
+    addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        stock: product.stock
+    });
+});
+colBody.appendChild(addToCartButton);
 
 const foundProducts = ( products ) => {
     const product = products[id - 1];
