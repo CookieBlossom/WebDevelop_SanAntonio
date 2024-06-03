@@ -61,10 +61,82 @@ usuarios = [
     },
     {
         id: 11,
-        name: "fabian",
-        email: "adjkkjsadas@gmail.com",
-        password: 12345
+        name: "venilda",
+        email: "venilda_sepulveda@gmail.com",
+        password: 2361894
     },
+    {
+        id: 12,
+        name: "manuel",
+        email: "manuel_garcia@gmail.com",
+        password: "password123"
+    },
+    {
+        id: 13,
+        name: "mariana",
+        email: "mariana_fernandez@gmail.com",
+        password: "password456"
+    },
+    {
+        id: 14,
+        name: "camila",
+        email: "camila_martinez@gmail.com",
+        password: "password789"
+    },
+    {
+        id: 15,
+        name: "lucas",
+        email: "lucas_diaz@gmail.com",
+        password: "password101"
+    },
+    {
+        id: 16,
+        name: "mateo",
+        email: "mateo_rojas@gmail.com",
+        password: "password202"
+    },
+    {
+        id: 17,
+        name: "sara",
+        email: "sara_gonzalez@gmail.com",
+        password: "password303"
+    },
+    {
+        id: 18,
+        name: "david",
+        email: "david_torres@gmail.com",
+        password: "password404"
+    },
+    {
+        id: 19,
+        name: "valentina",
+        email: "valentina_perez@gmail.com",
+        password: "password505"
+    },
+    {
+        id: 20,
+        name: "jose",
+        email: "jose_ramirez@gmail.com",
+        password: "password606"
+    },
+    {
+        id: 21,
+        name: "antonio",
+        email: "antonio_herrera@gmail.com",
+        password: "password707"
+    },
+    {
+        id: 22,
+        name: "sofia",
+        email: "sofia_morales@gmail.com",
+        password: "password808"
+    },
+    {
+        id: 23,
+        name: "diego",
+        email: "diego_navarro@gmail.com",
+        password: "password909"
+    }
     
 ]
 
