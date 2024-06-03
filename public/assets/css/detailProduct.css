@@ -1,0 +1,161 @@
+.navbar-brand img{
+    border-radius: 20%;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-nav{
+    display: flex;
+    align-items: center;
+}
+
+.navbar > .container-fluid{
+    justify-content: center;
+}
+
+#container-ref {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#container-ref ul {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+    border: none;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+.references a{
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+}
+.references img{
+    width: 20px;
+}
+.references {
+    list-style: none;
+}
+
+#infoProduct {
+    display: flex;
+}
+
+#productDetail {
+    padding: 10px;
+}
+
+#productDetail h1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 50px;
+}
+#productInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#productInfo p{
+    color: gray;
+    font-size: 20px;
+}
+
+#productInfo h3{
+    font-size: 30px;
+}
+
+#selecterInfo {
+    display: flex;
+    justify-content: center;
+}
+#selecterId{
+    width: 50%;
+}
+#selecterId label{
+    display: flex;
+    font-size: 20px;
+    color: black;
+}
+
+#section-recommend{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recommendProducts {
+    display: flex;
+    justify-content: center;
+}
+#recommendProducts .card{
+    padding: 0px;
+    border-style: none;
+    align-items: center;
+    justify-content: center;
+}
+#recommendProducts .card-body{
+    width: 100%;
+}
+#recommendProducts img{
+    padding: 35px;
+    height: 300px;
+}
+
+
+#social img{
+    padding: 0;
+    width: 30px;
+    margin: 5px;
+}
+#social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: space-between;
+    }  
+}
+@media (max-width: 980px) {
+    #recommendProducts img{
+        padding: 10px;
+        height: 200px;
+        
+    }
+    
+}
+
+@media (max-width: 770px) {
+    #recommendProducts img{
+        padding: 10px;
+    }
+    .card img{
+        width: 100%;
+    }
+    .references {
+        font-size: 10px;
+    }
+
+    #container-ref{
+        display: flex;
+        justify-content: center;
+    }
+    #productDetail h1{
+        font-size: 30px;
+    }
+    #productInfo h3{
+        font-size: 20px;
+    }    
+}

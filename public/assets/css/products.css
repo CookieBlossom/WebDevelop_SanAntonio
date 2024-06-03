@@ -66,17 +66,32 @@
 
 #productsFilter {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 #productsFilter .dropdown{
-
     padding-left: 10px;
+}
+
+.dropdown label{
+    display: flex;
+    justify-content: space-between;
 }
 
 .row{
     margin: 0;
     padding: 0px 1.5rem;
+}
+
+#selecterId select{
+    padding: 8px 15px; 
+}
+
+#selecterId {
+    padding-left: 10px;
+}
+.btn-icon{
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -91,6 +106,20 @@
         padding: 10px 0px;
         width: 100%;
         height: 80%;
+    }
+    .btn-text {
+        display: none;
+    }
+
+    .btn-icon{
+        display: inline-block;
+    }    
+    .btn-icon img{
+        width: 20px;
+        color: azure;
+    }
+    #productsFilter{
+        display: flex;
     }
     
 }

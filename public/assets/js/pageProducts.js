@@ -1,21 +1,9 @@
 import { getProducts } from './api.js';
-import { showUnique } from './funciones.js';
+import { showUnique, createDropDown, selectDropdown, filterProducts } from './funciones.js';
 
 let loadedProducts = [];
 let startIndex = 0;
 let allProductsRendered = false;
-let filters = { brand: ["Nike"]};
-
-(function () {
-    'use strict'
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-      new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-  })()
-
-
-
 const itemPage = 5;
 const locationProducts = document.getElementById("loadProducts");
 const locationSale = document.getElementById("productsSection");
@@ -34,90 +22,60 @@ const saleSection = (products) => {
     locationSale.appendChild(stockP);
 };
 
-const createDropDown = (results = [], name) => {
-    const div = document.createElement("div");
-    div.classList.add("dropdown");
-    const button = document.createElement("button");
-    button.classList.add("btn");
-    button.classList.add("btn-secondary");
-    button.classList.add("btn-dark")
-    button.classList.add("dropdown-toggle");
-    button.id = `dropdown${name}`;
-    button.type = 'button';
-    button.setAttribute("data-bs-toggle", "dropdown");
-    button.setAttribute("aria-expanded", "false");
-    button.innerText = name;
-
-    const ul = document.createElement("ul");
-    ul.classList.add("dropdown-menu");
-    ul.setAttribute("aria-labelledby", `dropdown${name}`);
-
-    results.forEach(option => {
-        const li = document.createElement("li");
-        li.classList.add("dropdown-item");
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.value = option;
-        const label = document.createElement("label");
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(option));
-        li.appendChild(label);
-        ul.appendChild(li);
-    });
-
-    div.appendChild(button);
-    div.appendChild(ul);
-    locationFilter.appendChild(div);
-};
-
 const getCheckedFilters = () => {
     const checkedFilters = {};
     document.querySelectorAll('.dropdown-menu').forEach(dropdown => {
         const filterName = dropdown.previousSibling.innerText.trim().toLowerCase();
         const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]:checked');
         if (checkboxes.length > 0) {
-            checkedFilters[filterName] = Array.from(checkboxes).map(checkbox => checkbox.value);
+            checkedFilters[filterName] = Array.from(checkboxes).map(checkbox => {
+                return isNaN(checkbox.value) ? checkbox.value : parseInt(checkbox.value);
+            });
+        }
+    });
+
+    document.querySelectorAll('#selecterId select').forEach(select => {
+        const filterName = select.getAttribute("data-filter"); // Cambio aquí
+        const selectedOption = select.options[select.selectedIndex];
+        if (selectedOption && selectedOption.value !== "all") {
+            checkedFilters[filterName] = isNaN(selectedOption.value) ? selectedOption.value : parseInt(selectedOption.value);
         }
     });
     return checkedFilters;
 };
 
 document.getElementById('applyFiltersButton').addEventListener('click', () => {
-    console.log("Botón 'Aplicar filtros' clickeado");
     const appliedFilters = getCheckedFilters();
-    console.log(appliedFilters);
     loadMoreButton.style.display = "none";
     locationProducts.innerHTML = '';
 
     if (Object.keys(appliedFilters).length === 0) {
-        alert("No se aplico ningun filtro");
-        location.reload(); // Recargar la página        
+        alert("No se aplicó ningún filtro");
+        location.reload();
     } else {
-        showFilteredProducts(loadedProducts, appliedFilters);
+        console.log(appliedFilters);
+        const filteredProducts = filterProducts(loadedProducts, appliedFilters);
+        console.log(filteredProducts);
+        showFilteredProducts(filteredProducts);
     }
 });
 
-// PRODUCTOS CON FILTRO
-const showFilteredProducts = (results = [], filters = {}) => {
-    let productFound = false;
-    for (let i = 0; i < results.length; i++) {
-        const product = results[i];
-        const id = product.id;
-        const name = product.name.toUpperCase();
-        const stock = product.stock;
-        const price = product.price;
 
-        let passesFilters = true;
-        Object.entries(filters).forEach(([filterKey, filterValues]) => {
-            if (!filterValues.includes(product[filterKey])) {
-                passesFilters = false;
-            }
-        });
 
-        if (passesFilters) {
-            productFound = true;
+const showFilteredProducts = (results = []) => {
+    const products = results;
+    if (products.length > 0) {
+        products.forEach(product => {
+            const id = product.id;
+            const name = product.name.toUpperCase();
+            const price = product.price;
+            const stock = product.stock;
             const row = document.createElement("div");
             row.classList.add("row");
+
+            row.addEventListener("click", () => {
+                window.location.href = `detalleProducto.html?id=${id}`;
+            });
 
             const card = document.createElement("div");
             card.classList.add("card");
@@ -149,17 +107,13 @@ const showFilteredProducts = (results = [], filters = {}) => {
 
             row.appendChild(card);
             locationProducts.appendChild(row);
-        }
-    }
-    if (!productFound) {
+        });
+    } else {
         alert("No hay productos disponibles con los filtros seleccionados.");
         location.reload();
     }
 };
 
-
-
-// PRODUCTOS CON FILTRO
 //PRODUCTOS SIN FILTRO
 const showProducts = (results = [], startIndex) => {
     const endIndex = startIndex + itemPage;
@@ -173,6 +127,9 @@ const showProducts = (results = [], startIndex) => {
         const row = document.createElement("div");
         row.classList.add("row");
 
+        row.addEventListener("click", () => {
+            window.location.href = `detalleProducto.html?id=${id}`;
+        });
         const card = document.createElement("div");
         card.classList.add("card");
         const img = document.createElement("img");
@@ -200,12 +157,11 @@ const showProducts = (results = [], startIndex) => {
 
         card.appendChild(img);
         card.appendChild(cardBody);
-
         row.appendChild(card);
         locationProducts.appendChild(row);
     }
 
-    return endIndex; // Devolver el nuevo índice para que pueda ser rastreado en la siguiente llamada
+    return endIndex;
 };
 
 const filterSection = ( products ) => {
@@ -213,10 +169,10 @@ const filterSection = ( products ) => {
     const brandFilter = showUnique( products, "brand");
     const sizeFilter = showUnique( products, "sizes");
     const category = showUnique( products, "category");
-    createDropDown((genreFilter), "genre");
-    createDropDown((brandFilter), "brand");
-    createDropDown((sizeFilter), "size");
-    createDropDown((category), "category");
+    createDropDown((genreFilter), "genre", locationFilter);
+    selectDropdown((brandFilter), "brand", locationFilter);
+    createDropDown((sizeFilter), "sizes", locationFilter);
+    createDropDown((category), "category", locationFilter);
 };
 
 const loadMoreProducts = () => {
@@ -240,4 +196,3 @@ getProducts()
     .catch((error) => {
         console.log(`El error es: ${error}`);
     });
-
